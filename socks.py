@@ -2,7 +2,6 @@
 import socket
 import os
 os.system('clear')
-iplist = []
 ip = input("[*]Please enter the target machines IP address or domain address:")
 socks = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 portnum = int(input("[*]Please enter a port to scan:"))
