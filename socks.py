@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 import socket
+
 iplist = []
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ip = input("[*]Please enter the target machines IP address or domain address:")
-def pscan(port):
+socks = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+prange = int(input("[*]Please enter a port to scan:"))
+data = bytes.fromhex('520500050106EF')
+while True:
     try:
-        sock.connect((ip,port))
-        return True
-    except KeyboardInterrupt:
-        print("You pressed Ctrl+C")
-        exit()
+        conect = socks.connect((ip,prange),timout=timoutObject)
+        socks.settimeout(5)
+        connect.send(data)
+        print("port", prange, "Is open..")
     except:
-        return False
-for x in range(3070,3074):
-    if pscan(x):
-        print('Port' ,x,'is open on this machine.')
-    else:
-        print('Port', x, 'is closed on this machine..')
+        print("Port", prange, "Is closed.")
+    break
+
+
