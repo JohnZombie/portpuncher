@@ -8,10 +8,10 @@ prange = int(input("[*]Please enter a port to scan:"))
 data = bytes.fromhex('520500050106EF')
 while True:
     try:
-        conect = socks.connect((ip,prange),timout=timoutObject)
+        socks.connect((ip,prange))
         socks.settimeout(5)
-        connect.send(data)
-        print("port", prange, "Is open..")
+        socks.send(data)
+        print("Port", prange, "Is open..")
     except:
         print("Port", prange, "Is closed.")
     break
