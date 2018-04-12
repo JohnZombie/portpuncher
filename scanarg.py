@@ -7,12 +7,11 @@ os.system('clear')
 
 class Cli(object):
     def args(self):
-        try:
-            ip = sys.argv[1]
-            port = sys.argv[2]
-        except:
+        if len(sys.argv) != 3:
             print("Please type in an ip address then port. Ex: python3 socks.py 192.168.1.1 80")
             sys.exit(1)
+        ip = sys.argv[1]
+        port = sys.argv[2]
         return ip,port    
     def scan(self, host , port):
         socks = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
